@@ -2,6 +2,12 @@
 
 Eine vollständige REST-API für ein Aufgabenmanagement-System (Todo-Liste) mit Express.js und moderner Web-Anwendung.
 
+## 🌐 Live Demo
+
+- **Frontend**: https://matzorator.github.io/express-rest-api/
+- **Backend API**: https://express-rest-api-xtnh.onrender.com/api
+- **Health Check**: https://express-rest-api-xtnh.onrender.com/api/health
+
 ## 📋 Features
 
 ### Backend (REST-API)
@@ -69,11 +75,32 @@ Server läuft auf: http://localhost:3000
 - Backend starten
 - Browser öffnen: http://localhost:3000
 
-**Option 2: GitHub Pages**
+**Option 2: GitHub Pages (Live)**
 
-- Repository auf GitHub pushen
-- GitHub Pages aktivieren
-- API-URL in `app.js` anpassen
+- Live-Demo nutzen: https://matzorator.github.io/express-rest-api/
+- Backend läuft auf Render: https://express-rest-api-xtnh.onrender.com
+
+## 🚢 Deployment
+
+### Backend auf Render
+
+1. **Render Account erstellen** auf [render.com](https://render.com)
+2. **New Web Service** → Repository verbinden
+3. **Einstellungen**:
+   - **Root Directory**: `backend`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+4. **Deploy** → URL notieren (z.B. `https://your-app.onrender.com`)
+
+### Frontend auf GitHub Pages
+
+1. **Repository erstellen** auf GitHub
+2. **Pages aktivieren**: Settings → Pages → Source: master/root
+3. **API-URL anpassen** in `app.js`:
+   ```javascript
+   const API_URL = "https://your-app.onrender.com/api";
+   ```
+4. **Pushen** → Fertig!
 
 ## 📚 API-Endpunkte
 
@@ -85,16 +112,6 @@ PUT    /api/tasks/:id   # Aufgabe aktualisieren
 DELETE /api/tasks/:id   # Aufgabe löschen
 GET    /api/health      # Health Check
 ```
-
-## 🌐 GitHub Pages Setup
-
-1. **Repository erstellen** auf GitHub
-2. **Pages aktivieren**: Settings → Pages → Source: main/root
-3. **API-URL anpassen** in `app.js`:
-   ```javascript
-   const API_URL = "https://dein-backend-url.com/api";
-   ```
-4. **Pushen und testen**
 
 ## 📖 Dokumentation
 

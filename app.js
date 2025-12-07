@@ -2,7 +2,7 @@
 const API_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:3000/api" // Lokale Entwicklung
-    : "https://srv-d4qciore5dus73elch0g.onrender.com/api"; // GitHub Pages (anpassen!)
+    : "https://express-rest-api-xtnh.onrender.com/api"; // GitHub Pages
 
 // State Management
 let tasks = [];

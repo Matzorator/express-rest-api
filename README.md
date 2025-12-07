@@ -1,375 +1,209 @@
 # Express.js REST-API für Aufgabenmanagement
 
-Eine vollständige REST-API für ein Aufgabenmanagement-System (Todo-Liste) mit Express.js, implementiert nach modernen Best Practices und MVC-Architektur. **Inklusive moderner Web-Anwendung mit HTML/CSS/JavaScript!**
+Eine vollständige REST-API für ein Aufgabenmanagement-System (Todo-Liste) mit Express.js und moderner Web-Anwendung.
 
 ## 📋 Features
 
 ### Backend (REST-API)
 
-- ✅ CRUD-Operationen für Aufgaben (Tasks)
-- ✅ MVC-Architektur (Model-View-Controller)
-- ✅ In-Memory-Datenquelle für Entwicklung
+- ✅ CRUD-Operationen für Aufgaben
+- ✅ MVC-Architektur
+- ✅ In-Memory-Datenquelle
 - ✅ Zentrale Fehlerbehandlung
-- ✅ Request-Logging
-- ✅ Input-Validierung
-- ✅ RESTful API-Design
-- ✅ ES6-Module
+- ✅ Request-Logging & Validierung
 - ✅ CORS-Support
 
-### Frontend (Web-Anwendung)
+### Frontend (Web-App)
 
-- ✅ Moderne, responsive Benutzeroberfläche
+- ✅ Moderne, responsive UI
 - ✅ Aufgaben erstellen, bearbeiten, löschen
-- ✅ Status-Verwaltung (offen/erledigt)
-- ✅ Filter-Funktionen (alle/offen/erledigt)
-- ✅ Live-Statistiken
+- ✅ Filter & Live-Statistiken
 - ✅ Toast-Benachrichtigungen
-- ✅ Modal für Bearbeitung
-- ✅ Vollständig responsive (Desktop & Mobile)
+- ✅ GitHub Pages ready
 
 ## 🏗️ Projektstruktur
 
 ```
 Express_Rest_API/
-├── public/                # Web-Anwendung (Frontend)
-│   ├── index.html         # Haupt-HTML-Seite
-│   ├── styles.css         # Styling und Design
-│   └── app.js             # Frontend-Logik und API-Integration
-├── src/
-│   ├── controllers/       # Controller-Schicht (HTTP-Request-Handling)
-│   │   └── task.controller.js
-│   ├── services/          # Service-Schicht (Geschäftslogik)
-│   │   └── task.service.js
-│   ├── models/            # Model-Schicht (Datenstrukturen & Repository)
-│   │   ├── task.model.js
-│   │   └── task.repository.js
-│   ├── routes/            # Routing-Definition
-│   │   ├── index.js
-│   │   └── task.routes.js
-│   ├── middleware/        # Middleware-Funktionen
-│   │   ├── logger.middleware.js
-│   │   ├── error.middleware.js
-│   │   ├── validation.middleware.js
-│   │   └── cors.middleware.js
-│   ├── utils/             # Hilfsfunktionen und Utilities
-│   │   └── errors.js
-│   ├── app.js             # Express-App-Konfiguration
-│   └── server.js          # Server-Entry-Point
-├── package.json
-├── .gitignore
+├── backend/               # Express.js REST-API
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── middleware/
+│   │   └── utils/
+│   ├── package.json
+│   └── README.md
+├── frontend/              # Web-Anwendung
+│   ├── index.html
+│   ├── styles.css
+│   ├── app.js
+│   └── README.md
+├── index.html             # GitHub Pages (Kopie)
+├── styles.css
+├── app.js
 ├── README.md
-├── API_TESTS.md           # API-Test-Beispiele
-├── GITHUB_SETUP.md        # GitHub-Repository-Anleitung
-└── WEB_APP_DOCUMENTATION.md  # Dokumentation der Web-Anwendung
+├── API_TESTS.md
+├── GITHUB_SETUP.md
+├── WEB_APP_DOCUMENTATION.md
+└── PROJECT_SUMMARY.md
 ```
 
-## 🚀 Installation
+## 🚀 Schnellstart
 
-1. Repository klonen und in das Verzeichnis wechseln:
-
-```bash
-cd Express_Rest_API
-```
-
-2. Abhängigkeiten installieren:
+### Backend starten
 
 ```bash
+cd backend
 npm install
-```
-
-3. Server starten:
-
-```bash
 npm start
 ```
 
-Für Entwicklung mit Auto-Reload (Node.js 18+):
+Server läuft auf: http://localhost:3000
 
-```bash
-npm run dev
+### Frontend nutzen
+
+**Option 1: Mit Backend (lokal)**
+
+- Backend starten
+- Browser öffnen: http://localhost:3000
+
+**Option 2: GitHub Pages**
+
+- Repository auf GitHub pushen
+- GitHub Pages aktivieren
+- API-URL in `app.js` anpassen
+
+## 📚 API-Endpunkte
+
+```
+GET    /api/tasks       # Alle Aufgaben
+GET    /api/tasks/:id   # Einzelne Aufgabe
+POST   /api/tasks       # Neue Aufgabe
+PUT    /api/tasks/:id   # Aufgabe aktualisieren
+DELETE /api/tasks/:id   # Aufgabe löschen
+GET    /api/health      # Health Check
 ```
 
-Der Server läuft standardmäßig auf `http://localhost:3000`
+## 🌐 GitHub Pages Setup
 
-## 🌐 Web-Anwendung nutzen
+1. **Repository erstellen** auf GitHub
+2. **Pages aktivieren**: Settings → Pages → Source: main/root
+3. **API-URL anpassen** in `app.js`:
+   ```javascript
+   const API_URL = "https://dein-backend-url.com/api";
+   ```
+4. **Pushen und testen**
 
-Nach dem Start des Servers:
+## 📖 Dokumentation
 
-1. **Browser öffnen:** http://localhost:3000
-2. Die moderne Web-Anwendung wird automatisch geladen
-3. Du kannst sofort Aufgaben erstellen, bearbeiten und verwalten
+- **Backend**: `backend/README.md`
+- **Frontend**: `frontend/README.md`
+- **Web-App Details**: `WEB_APP_DOCUMENTATION.md`
+- **API-Tests**: `API_TESTS.md`
+- **GitHub Setup**: `GITHUB_SETUP.md`
+- **Projekt-Übersicht**: `PROJECT_SUMMARY.md`
 
-**Hauptfunktionen der Web-App:**
+## 🎨 Web-App Features
 
-- ➕ Neue Aufgaben erstellen
+- ➕ Aufgaben erstellen
 - ✏️ Aufgaben bearbeiten (Modal)
 - ✅ Status ändern (offen ↔ erledigt)
 - 🗑️ Aufgaben löschen
 - 🔍 Nach Status filtern
-- 📊 Live-Statistiken anzeigen
-
-**Detaillierte Dokumentation:** Siehe `WEB_APP_DOCUMENTATION.md`
-
-## 📚 API-Endpunkte
-
-### Alle Aufgaben abrufen
-
-```http
-GET /api/tasks
-```
-
-**Response:**
-
-```json
-{
-  "success": true,
-  "data": [
-    {
-      "id": "abc123",
-      "title": "Projekt Setup",
-      "description": "Express.js REST-API einrichten",
-      "completed": false,
-      "createdAt": "2025-12-07T10:00:00.000Z",
-      "updatedAt": "2025-12-07T10:00:00.000Z"
-    }
-  ],
-  "count": 1
-}
-```
-
-### Einzelne Aufgabe abrufen
-
-```http
-GET /api/tasks/:id
-```
-
-**Response:**
-
-```json
-{
-  "success": true,
-  "data": {
-    "id": "abc123",
-    "title": "Projekt Setup",
-    "description": "Express.js REST-API einrichten",
-    "completed": false,
-    "createdAt": "2025-12-07T10:00:00.000Z",
-    "updatedAt": "2025-12-07T10:00:00.000Z"
-  }
-}
-```
-
-### Neue Aufgabe erstellen
-
-```http
-POST /api/tasks
-Content-Type: application/json
-
-{
-  "title": "Neue Aufgabe",
-  "description": "Beschreibung der Aufgabe",
-  "completed": false
-}
-```
-
-**Response:**
-
-```json
-{
-  "success": true,
-  "data": {
-    "id": "xyz789",
-    "title": "Neue Aufgabe",
-    "description": "Beschreibung der Aufgabe",
-    "completed": false,
-    "createdAt": "2025-12-07T10:30:00.000Z",
-    "updatedAt": "2025-12-07T10:30:00.000Z"
-  },
-  "message": "Aufgabe erfolgreich erstellt"
-}
-```
-
-### Aufgabe aktualisieren
-
-```http
-PUT /api/tasks/:id
-Content-Type: application/json
-
-{
-  "title": "Aktualisierter Titel",
-  "completed": true
-}
-```
-
-**Response:**
-
-```json
-{
-  "success": true,
-  "data": {
-    "id": "abc123",
-    "title": "Aktualisierter Titel",
-    "description": "Express.js REST-API einrichten",
-    "completed": true,
-    "createdAt": "2025-12-07T10:00:00.000Z",
-    "updatedAt": "2025-12-07T11:00:00.000Z"
-  },
-  "message": "Aufgabe erfolgreich aktualisiert"
-}
-```
-
-### Aufgabe löschen
-
-```http
-DELETE /api/tasks/:id
-```
-
-**Response:**
-
-```json
-{
-  "success": true,
-  "message": "Aufgabe erfolgreich gelöscht"
-}
-```
-
-### Health Check
-
-```http
-GET /api/health
-```
-
-**Response:**
-
-```json
-{
-  "success": true,
-  "message": "API ist betriebsbereit",
-  "timestamp": "2025-12-07T10:00:00.000Z"
-}
-```
+- 📊 Live-Statistiken
+- 💬 Toast-Benachrichtigungen
+- 📱 Vollständig responsive
 
 ## 🔧 Datenmodell
 
-### Task-Objekt
-
 ```javascript
 {
-  id: string,              // Automatisch generierte eindeutige ID
-  title: string,           // Titel der Aufgabe (erforderlich)
-  description: string,     // Beschreibung der Aufgabe (erforderlich)
-  completed: boolean,      // Status der Aufgabe (Standard: false)
-  createdAt: string,       // ISO 8601 Zeitstempel der Erstellung
-  updatedAt: string        // ISO 8601 Zeitstempel der letzten Aktualisierung
+  id: string,              // Automatisch generiert
+  title: string,           // Titel der Aufgabe
+  description: string,     // Beschreibung
+  completed: boolean,      // Status
+  createdAt: string,       // ISO 8601 Zeitstempel
+  updatedAt: string        // ISO 8601 Zeitstempel
 }
 ```
 
-## 🛡️ Fehlerbehandlung
+## 🏛️ Architektur
 
-Die API verwendet eine zentrale Fehlerbehandlung mit strukturierten Fehlerantworten:
+**MVC-Pattern:**
 
-### Validierungsfehler (400)
+- **Model**: `task.model.js`, `task.repository.js`
+- **Service**: `task.service.js` (Geschäftslogik)
+- **Controller**: `task.controller.js` (HTTP-Handling)
+- **Routes**: `task.routes.js`, `index.js`
 
-```json
-{
-  "success": false,
-  "error": "Titel ist erforderlich und muss ein nicht-leerer String sein"
-}
-```
+**Middleware:**
 
-### Nicht gefunden (404)
+- CORS (`cors.middleware.js`)
+- Logging (`logger.middleware.js`)
+- Error Handling (`error.middleware.js`)
+- Validation (`validation.middleware.js`)
 
-```json
-{
-  "success": false,
-  "error": "Aufgabe mit ID xyz789 wurde nicht gefunden"
-}
-```
+## 🧪 Testen
 
-### Ungültiger Content-Type (415)
+### Mit PowerShell
 
-```json
-{
-  "success": false,
-  "error": "Content-Type muss application/json sein"
-}
-```
-
-### Serverfehler (500)
-
-```json
-{
-  "success": false,
-  "error": "Ein unerwarteter Fehler ist aufgetreten"
-}
-```
-
-## 🧩 Architektur
-
-### Model-Schicht
-
-- `task.model.js`: Task-Datenmodell mit Eigenschaften und Methoden
-- `task.repository.js`: In-Memory-Datenspeicher (Singleton) für CRUD-Operationen
-
-### Service-Schicht
-
-- `task.service.js`: Geschäftslogik und Validierung
-
-### Controller-Schicht
-
-- `task.controller.js`: HTTP-Request-Handling und Response-Formatierung
-
-### Middleware
-
-- `logger.middleware.js`: Request/Response-Logging
-- `error.middleware.js`: Zentrale Fehlerbehandlung
-- `validation.middleware.js`: Content-Type und Body-Validierung
-
-## 📝 Validierungsregeln
-
-### POST /api/tasks
-
-- `title`: Erforderlich, nicht-leerer String
-- `description`: Erforderlich, nicht-leerer String
-- `completed`: Optional, Boolean (Standard: false)
-
-### PUT /api/tasks/:id
-
-- `title`: Optional, nicht-leerer String (wenn vorhanden)
-- `description`: Optional, nicht-leerer String (wenn vorhanden)
-- `completed`: Optional, Boolean
-
-## 🧪 Testing mit cURL
-
-```bash
+```powershell
 # Alle Aufgaben abrufen
-curl http://localhost:3000/api/tasks
+Invoke-WebRequest -Uri "http://localhost:3000/api/tasks" | Select-Object -ExpandProperty Content
 
 # Neue Aufgabe erstellen
-curl -X POST http://localhost:3000/api/tasks \
-  -H "Content-Type: application/json" \
-  -d "{\"title\":\"Test Task\",\"description\":\"Test Description\"}"
+$body = @{
+    title = "Test"
+    description = "Test-Aufgabe"
+} | ConvertTo-Json
 
-# Aufgabe aktualisieren
-curl -X PUT http://localhost:3000/api/tasks/abc123 \
-  -H "Content-Type: application/json" \
-  -d "{\"completed\":true}"
-
-# Aufgabe löschen
-curl -X DELETE http://localhost:3000/api/tasks/abc123
+Invoke-WebRequest -Uri "http://localhost:3000/api/tasks" `
+    -Method POST `
+    -ContentType "application/json" `
+    -Body $body
 ```
 
-## 🔐 Best Practices
+Mehr Beispiele: `API_TESTS.md`
 
-- ✅ ES6-Module statt CommonJS
-- ✅ Async/Await für asynchrone Operationen
-- ✅ Zentrale Fehlerbehandlung
-- ✅ Klare Trennung der Verantwortlichkeiten (MVC)
-- ✅ Input-Validierung
-- ✅ RESTful API-Design
-- ✅ Strukturierte JSON-Responses
-- ✅ HTTP-Statuscodes korrekt verwendet
-- ✅ Graceful Shutdown
+## 🛠️ Entwicklung
+
+```bash
+# Backend mit Auto-Reload
+cd backend
+npm run dev
+
+# Frontend wird automatisch vom Backend bereitgestellt
+```
+
+## 📦 Deployment
+
+### Backend
+
+- Node.js Server (Heroku, Railway, Render, etc.)
+- Umgebungsvariablen konfigurieren
+- `npm start` auf Server
+
+### Frontend
+
+- GitHub Pages (kostenlos)
+- Netlify, Vercel (alternativ)
+- Statische Dateien: `index.html`, `styles.css`, `app.js`
+
+## ⚠️ Wichtige Hinweise
+
+- **In-Memory-Datenbank**: Daten gehen bei Server-Neustart verloren
+- **Produktion**: Echte Datenbank verwenden (MongoDB, PostgreSQL)
+- **CORS**: Für Produktion Domains einschränken
+- **API-URL**: In `app.js` für Production anpassen
+
+## 🤝 Beitragen
+
+1. Fork das Repository
+2. Feature-Branch erstellen
+3. Änderungen committen
+4. Pull Request erstellen
 
 ## 📄 Lizenz
 
@@ -377,4 +211,8 @@ ISC
 
 ## 👤 Autor
 
-Entwickelt als Übungsprojekt für Express.js REST-API-Entwicklung
+Entwickelt als Express.js Learning Project
+
+---
+
+**Viel Erfolg mit deinem Aufgabenmanagement-System! 🚀**

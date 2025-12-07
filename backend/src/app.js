@@ -23,8 +23,8 @@ const app = express();
 // CORS Middleware (muss vor anderen Middlewares kommen)
 app.use(corsMiddleware);
 
-// Statische Dateien aus dem public-Ordner bereitstellen
-app.use(express.static(path.join(__dirname, "../public")));
+// Statische Dateien aus dem frontend-Ordner bereitstellen
+app.use(express.static(path.join(__dirname, "../../frontend")));
 
 // Middleware für Request-Body-Parsing
 app.use(express.json());
@@ -41,7 +41,7 @@ app.use("/api", routes);
 
 // Root-Endpunkt für Web-App (HTML)
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
+  res.sendFile(path.join(__dirname, "../../frontend/index.html"));
 });
 
 // 404 Handler (muss vor dem Error Handler kommen)

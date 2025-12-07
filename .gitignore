@@ -4,3 +4,13 @@ node_modules/
 *.log
 coverage/
 .vscode/
+
+# Backend
+backend/node_modules/
+backend/.env
+backend/*.log
+
+# IDE
+.idea/
+*.swp
+*.swo

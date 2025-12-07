@@ -1,24 +1,42 @@
 # Express.js REST-API für Aufgabenmanagement
 
-Eine vollständige REST-API für ein Aufgabenmanagement-System (Todo-Liste) mit Express.js, implementiert nach modernen Best Practices und MVC-Architektur.
+Eine vollständige REST-API für ein Aufgabenmanagement-System (Todo-Liste) mit Express.js, implementiert nach modernen Best Practices und MVC-Architektur. **Inklusive moderner Web-Anwendung mit HTML/CSS/JavaScript!**
 
 ## 📋 Features
 
+### Backend (REST-API)
+
 - ✅ CRUD-Operationen für Aufgaben (Tasks)
-- ✅ MVC-Architektur (Model-View-Controller ohne Views)
+- ✅ MVC-Architektur (Model-View-Controller)
 - ✅ In-Memory-Datenquelle für Entwicklung
 - ✅ Zentrale Fehlerbehandlung
 - ✅ Request-Logging
 - ✅ Input-Validierung
 - ✅ RESTful API-Design
 - ✅ ES6-Module
+- ✅ CORS-Support
+
+### Frontend (Web-Anwendung)
+
+- ✅ Moderne, responsive Benutzeroberfläche
+- ✅ Aufgaben erstellen, bearbeiten, löschen
+- ✅ Status-Verwaltung (offen/erledigt)
+- ✅ Filter-Funktionen (alle/offen/erledigt)
+- ✅ Live-Statistiken
+- ✅ Toast-Benachrichtigungen
+- ✅ Modal für Bearbeitung
+- ✅ Vollständig responsive (Desktop & Mobile)
 
 ## 🏗️ Projektstruktur
 
 ```
 Express_Rest_API/
+├── public/                # Web-Anwendung (Frontend)
+│   ├── index.html         # Haupt-HTML-Seite
+│   ├── styles.css         # Styling und Design
+│   └── app.js             # Frontend-Logik und API-Integration
 ├── src/
-│   ├── controllers/        # Controller-Schicht (HTTP-Request-Handling)
+│   ├── controllers/       # Controller-Schicht (HTTP-Request-Handling)
 │   │   └── task.controller.js
 │   ├── services/          # Service-Schicht (Geschäftslogik)
 │   │   └── task.service.js
@@ -31,14 +49,18 @@ Express_Rest_API/
 │   ├── middleware/        # Middleware-Funktionen
 │   │   ├── logger.middleware.js
 │   │   ├── error.middleware.js
-│   │   └── validation.middleware.js
+│   │   ├── validation.middleware.js
+│   │   └── cors.middleware.js
 │   ├── utils/             # Hilfsfunktionen und Utilities
 │   │   └── errors.js
 │   ├── app.js             # Express-App-Konfiguration
 │   └── server.js          # Server-Entry-Point
 ├── package.json
 ├── .gitignore
-└── README.md
+├── README.md
+├── API_TESTS.md           # API-Test-Beispiele
+├── GITHUB_SETUP.md        # GitHub-Repository-Anleitung
+└── WEB_APP_DOCUMENTATION.md  # Dokumentation der Web-Anwendung
 ```
 
 ## 🚀 Installation
@@ -68,6 +90,25 @@ npm run dev
 ```
 
 Der Server läuft standardmäßig auf `http://localhost:3000`
+
+## 🌐 Web-Anwendung nutzen
+
+Nach dem Start des Servers:
+
+1. **Browser öffnen:** http://localhost:3000
+2. Die moderne Web-Anwendung wird automatisch geladen
+3. Du kannst sofort Aufgaben erstellen, bearbeiten und verwalten
+
+**Hauptfunktionen der Web-App:**
+
+- ➕ Neue Aufgaben erstellen
+- ✏️ Aufgaben bearbeiten (Modal)
+- ✅ Status ändern (offen ↔ erledigt)
+- 🗑️ Aufgaben löschen
+- 🔍 Nach Status filtern
+- 📊 Live-Statistiken anzeigen
+
+**Detaillierte Dokumentation:** Siehe `WEB_APP_DOCUMENTATION.md`
 
 ## 📚 API-Endpunkte
 
